@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: ${ACTIVE_PROFILE:integration}
+    include:
+      - db
+      - kafka
+      - quartz
+  application:
+    name: quartz

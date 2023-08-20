@@ -1,0 +1,13 @@
+spring:
+  quartz:
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: NEVER
+    properties:
+      org:
+        quartz:
+          scheduler:
+            batchTriggerAcquisitionMaxCount: 5
+          jobStore:
+            acquireTriggersWithinLock: true
+            misfireThreshold: 10000

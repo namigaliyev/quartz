@@ -1,0 +1,17 @@
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: ${KAFKA_HOST:localhost}:${KAFKA_PORT:9092}
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        acks: all
+        retries: 10
+        retry.backoff.ms: 1000
+        max.block.ms: 20000
+        delivery.timeout.ms: 30000
+        spring:
+          json:
+            add:
+              type:
+                headers: false
